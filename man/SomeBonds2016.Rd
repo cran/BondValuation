@@ -4,7 +4,8 @@
 \name{SomeBonds2016}
 \alias{SomeBonds2016}
 \title{Properties of 100 plain vanilla fixed coupon corporate bonds.}
-\format{A data frame with 100 rows and 12 variables:
+\format{
+A data frame with 100 rows and 12 variables:
 \describe{
   \item{ID.No}{Identification number of the security.}
   \item{Coup.Type}{Type of the bond's coupon.}
@@ -27,7 +28,8 @@
             the bond in percent.}
   \item{DCC.Input}{The day count convention the bond follows. Type ?AccrInt for details.}
   \item{EOM.Input}{Boolean indicating whether the bond follows the End-of-Month rule.}
-}}
+}
+}
 \usage{
 data(SomeBonds2016)
 }

@@ -4,12 +4,25 @@
 \alias{DP}
 \title{DP (dirty price calculation of a fixed-coupon bond)}
 \usage{
-DP(CP = as.numeric(NA), SETT = as.Date(NA), Em = as.Date(NA),
-  Mat = as.Date(NA), CpY = as.numeric(NA), FIPD = as.Date(NA),
-  LIPD = as.Date(NA), FIAD = as.Date(NA), RV = as.numeric(NA),
-  Coup = as.numeric(NA), DCC = as.numeric(NA), EOM = as.numeric(NA),
-  DateOrigin = as.Date("1970-01-01"), InputCheck = 1,
-  FindEOM = FALSE, RegCF.equal = 0, AnnivDatesOutput = as.list(NA))
+DP(
+  CP = as.numeric(NA),
+  SETT = as.Date(NA),
+  Em = as.Date(NA),
+  Mat = as.Date(NA),
+  CpY = as.numeric(NA),
+  FIPD = as.Date(NA),
+  LIPD = as.Date(NA),
+  FIAD = as.Date(NA),
+  RV = as.numeric(NA),
+  Coup = as.numeric(NA),
+  DCC = as.numeric(NA),
+  EOM = as.numeric(NA),
+  DateOrigin = as.Date("1970-01-01"),
+  InputCheck = 1,
+  FindEOM = FALSE,
+  RegCF.equal = 0,
+  AnnivDatesOutput = as.list(NA)
+)
 }
 \arguments{
 \item{CP}{The bond's clean price.}

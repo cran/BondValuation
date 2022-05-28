@@ -4,11 +4,19 @@
 \alias{AccrInt}
 \title{AccrInt (calculation of accrued interest)}
 \usage{
-AccrInt(StartDate = as.Date(NA), EndDate = as.Date(NA),
-  Coup = as.numeric(NA), DCC = as.numeric(NA), RV = as.numeric(NA),
-  CpY = as.numeric(NA), Mat = as.Date(NA), YearNCP = as.Date(NA),
-  EOM = as.numeric(NA), DateOrigin = as.Date("1970-01-01"),
-  InputCheck = 1)
+AccrInt(
+  StartDate = as.Date(NA),
+  EndDate = as.Date(NA),
+  Coup = as.numeric(NA),
+  DCC = as.numeric(NA),
+  RV = as.numeric(NA),
+  CpY = as.numeric(NA),
+  Mat = as.Date(NA),
+  YearNCP = as.Date(NA),
+  EOM = as.numeric(NA),
+  DateOrigin = as.Date("1970-01-01"),
+  InputCheck = 1
+)
 }
 \arguments{
 \item{StartDate}{Calendar date on which interest accrual starts. Date class object with format "\%Y-\%m-\%d". (required)}
@@ -97,7 +105,7 @@ takes place between two coupon payment dates.
 \bold{Day Count Conventions}
 
 \describe{
-  \item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Actual/Actual (ISDA)}                      \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -110,7 +118,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Actual/Actual (ICMA)}                      \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -125,7 +133,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Actual/Actual (AFB)}                       \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -139,7 +147,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Actual/365L}                               \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -152,7 +160,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{30/360}                                    \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -166,7 +174,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{30E/360}                                   \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -181,7 +189,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{30E/360 (ISDA)}                            \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -194,7 +202,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{30/360 (German)}                           \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -207,7 +215,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{30/360 US}                                 \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -220,7 +228,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Actual/365 (Fixed)}                        \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -233,7 +241,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Actual(NL)/365}                            \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -248,7 +256,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Actual/360}                                \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -261,7 +269,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{30/365}                                    \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -272,7 +280,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Act/365 (Canadian Bond)}                   \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -283,7 +291,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{Act/364}                                   \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr
@@ -294,7 +302,7 @@ takes place between two coupon payment dates.
     }
   }
 
-\item{}{
+  \item{-}{
     \tabular{cccl}{
                    \tab   \tab     \tab \bold{BusDay/252 (Brazilian)}                    \cr
         ___________\tab | \tab ___ \tab ________________________________________________ \cr

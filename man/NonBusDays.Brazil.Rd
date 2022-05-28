@@ -4,12 +4,14 @@
 \name{NonBusDays.Brazil}
 \alias{NonBusDays.Brazil}
 \title{Non-business days in Brazil from 1946-01-01 to 2299-12-31.}
-\format{A data frame with 40378 rows and 3 variables:
+\format{
+A data frame with 40378 rows and 3 variables:
 \itemize{
   \item{Holiday.Name}
   \item{Date}
   \item{Weekday}
-}}
+}
+}
 \usage{
 data(NonBusDays.Brazil)
 }

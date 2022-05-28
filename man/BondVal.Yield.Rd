@@ -4,14 +4,28 @@
 \alias{BondVal.Yield}
 \title{BondVal.Yield (calculation of YtM, AccrInt, DP, ModDUR, MacDUR and Conv)}
 \usage{
-BondVal.Yield(CP = as.numeric(NA), SETT = as.Date(NA),
-  Em = as.Date(NA), Mat = as.Date(NA), CpY = as.numeric(NA),
-  FIPD = as.Date(NA), LIPD = as.Date(NA), FIAD = as.Date(NA),
-  RV = as.numeric(NA), Coup = as.numeric(NA), DCC = as.numeric(NA),
-  EOM = as.numeric(NA), DateOrigin = as.Date("1970-01-01"),
-  InputCheck = 1, FindEOM = FALSE, RegCF.equal = 0,
-  SimpleLastPeriod = TRUE, Precision = .Machine$double.eps^0.75,
-  Calc.Method = 1, AnnivDatesOutput = as.list(NA))
+BondVal.Yield(
+  CP = as.numeric(NA),
+  SETT = as.Date(NA),
+  Em = as.Date(NA),
+  Mat = as.Date(NA),
+  CpY = as.numeric(NA),
+  FIPD = as.Date(NA),
+  LIPD = as.Date(NA),
+  FIAD = as.Date(NA),
+  RV = as.numeric(NA),
+  Coup = as.numeric(NA),
+  DCC = as.numeric(NA),
+  EOM = as.numeric(NA),
+  DateOrigin = as.Date("1970-01-01"),
+  InputCheck = 1,
+  FindEOM = FALSE,
+  RegCF.equal = 0,
+  SimpleLastPeriod = TRUE,
+  Precision = .Machine$double.eps^0.75,
+  Calc.Method = 1,
+  AnnivDatesOutput = as.list(NA)
+)
 }
 \arguments{
 \item{CP}{The bond's clean price on \code{SETT}. (required)}

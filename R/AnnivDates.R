@@ -43,7 +43,7 @@
 #'   \item The remaining valid calendar dates are used to gauge whether the bond follows the
 #'   End-of-Month-Rule. The resulting parameter est_EOM can take on the following values:
 #'      \describe{
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{cl}{
 #'          \bold{\emph{Case 1:}} \tab \bold{\code{FIPD} and \code{LIPD} are both \code{NA}} \cr
 #'                    ___________ \tab ____________________________________                  \cr
@@ -52,7 +52,7 @@
 #'                     ========== \tab ================================                      \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{cl}{
 #'          \bold{\emph{Case 2:}} \tab \bold{\code{FIPD} is \code{NA} and \code{LIPD} is a valid calendar date} \cr
 #'                    ___________ \tab ____________________________________                                     \cr
@@ -61,7 +61,7 @@
 #'                     ========== \tab ================================                                         \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{cl}{
 #'          \bold{\emph{Case 3:}} \tab \bold{\code{FIPD} is a valid calendar date and \code{LIPD} is \code{NA}} \cr
 #'                    ___________ \tab ____________________________________                                     \cr
@@ -70,7 +70,7 @@
 #'                     ========== \tab ================================                                         \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{cl}{
 #'          \bold{\emph{Case 4:}} \tab \bold{\code{FIPD} and \code{LIPD} are valid calendar dates} \cr
 #'                    ___________ \tab ____________________________________                        \cr
@@ -189,7 +189,7 @@
 #'  \describe{
 #'    \item{\emph{\bold{DateVectors}} (data frame)}{
 #'      \describe{
-#'        \item{}{}
+#'        \item{-}{}
 #'        \item{\emph{RealDates}}{A vector of Date class objects with format "\%Y-\%m-\%d" in ascending order,
 #'        that contains the issue date, all actual coupon payment dates and the maturity date.}
 #'        \item{\emph{RD_indexes}}{A vector of numerics capturing the temporal structure of the bond.}
@@ -203,12 +203,12 @@
 #'        date immediately succeeding the maturity date, if the bond has an irregular final coupon period;
 #'        otherwise it is the maturity date.}
 #'        \item{\emph{AD_indexes}}{A vector of numerics capturing the temporal structure of the bond.}
-#'        \item{}{}
+#'        \item{-}{}
 #'      }
 #'    }
 #'    \item{\emph{\bold{PaySched}} (data frame)}{
 #'      \describe{
-#'        \item{}{}
+#'        \item{-}{}
 #'        \item{\emph{CoupDates}}{A vector of Date class objects with format "\%Y-\%m-\%d" in ascending order,
 #'        that contains all actual coupon payment dates and the maturity date.}
 #'        \item{\emph{CoupPayments}}{A vector of class "numeric" objects, that contains the actual amounts of
@@ -216,12 +216,12 @@
 #'        same as that of \code{RV} that was passed to the function. \code{RV} is not included in the final
 #'        interest payment.}
 #'        \item{\bold{NOTE:}}{\code{PaySched} is created only if the variable \code{Coup} is provided.}
-#'        \item{}{}
+#'        \item{-}{}
 #'      }
 #'    }
 #'    \item{\emph{\bold{Traits}} (data frame)}{
 #'      \describe{
-#'        \item{}{}
+#'        \item{-}{}
 #'        \item{\emph{DateOrigin}}{The starting point for the daycount in "Date" objects.}
 #'        \item{\emph{CpY}}{Number of interest payments per year.}
 #'        \item{\emph{FIAD}}{Date on which the interest accrual starts (so-called "dated date").}
@@ -253,15 +253,14 @@
 #'        \item{\emph{EOM_Orig}}{The value of \code{EOM} that was entered.}
 #'        \item{\emph{est_EOM}}{The estimated value of \code{EOM}.}
 #'        \item{\emph{EOM_used}}{The value of \code{EOM} that was used in the calculations.}
-#'        \item{}{}
+#'        \item{-}{}
 #'      }
 #'    }
 #'    \item{\emph{\bold{Warnings}} (data frame)}{
 #'      \describe{
-#'        \item{}{}
-#'        \item{}{A set of flags that indicate the occurrence of warnings during the execution.
+#'        \item{-}{A set of flags that indicate the occurrence of warnings during the execution.
 #'                Below they are listed according to the hierarchical structure within the function \bold{AnnivDates}.}
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'                                            \tab     \tab                                                                         \cr
 #'                                            \tab     \tab                                                                         \cr
@@ -277,7 +276,7 @@
 #'                          ================= \tab === \tab ===========================================                             \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{EmMatMissing}} =  \tab     \tab                                                                                        \cr
 #'                                        1 \tab     \tab , if either issue date (\code{Em}) or maturity date (\code{Mat}) or both               \cr
@@ -290,7 +289,7 @@
 #'                        ================= \tab === \tab ===========================================                                            \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{CpYOverride}} =  \tab     \tab                                                                                \cr
 #'                                       1 \tab     \tab , if number of interest periods per year (\code{CpY}) is missing or            \cr
@@ -304,7 +303,7 @@
 #'                       ================= \tab === \tab ===========================================                                    \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{RV_set100percent}} =  \tab     \tab                                                                 \cr
 #'                                            1 \tab     \tab , if the redemption value (\code{RV}) is missing or \code{NA}.  \cr
@@ -317,7 +316,7 @@
 #'                            ================= \tab === \tab ===========================================                     \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{NegLifeFlag}} =  \tab     \tab                                                                                        \cr
 #'                                       1 \tab     \tab , if the provided maturity date (\code{Mat}) is before or on the                       \cr
@@ -330,7 +329,7 @@
 #'                       ================= \tab === \tab ===========================================                                            \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{ZeroFlag}} =  \tab     \tab                                                                                              \cr
 #'                                    1 \tab     \tab , if number of interest payments per year (\code{CpY}) is \code{0}.                          \cr
@@ -342,7 +341,7 @@
 #'                    ================= \tab === \tab ===========================================                                                  \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{Em_Mat_SameMY}} =  \tab     \tab                                                                                   \cr
 #'                                         1 \tab     \tab , if the issue date (\code{Em}) and the maturity date (\code{Mat}) are in the     \cr
@@ -356,7 +355,7 @@
 #'                         ================= \tab === \tab ===========================================                                       \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{ChronErrorFlag}} =  \tab     \tab                                                                                     \cr
 #'                                          1 \tab     \tab , if the provided dates are in a wrong chronological order.                         \cr
@@ -373,7 +372,7 @@
 #'                          ================= \tab === \tab ===========================================                                         \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{FIPD_LIPD_equal}} =  \tab     \tab                                                                                           \cr
 #'                                           1 \tab     \tab if \code{Em} < \code{FIPD} = \code{LIPD} < \code{Mat}.                                    \cr
@@ -386,7 +385,7 @@
 #'                           ================= \tab === \tab ===========================================                                               \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{IPD_CpY_Corrupt}} =  \tab     \tab                                                                       \cr
 #'                                           1 \tab     \tab , if the provided first interest payment date (\code{FIPD}) and last  \cr
@@ -418,7 +417,7 @@
 #'                           ================= \tab === \tab ===========================================                           \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{EOM_Deviation}} =  \tab     \tab                                                                                  \cr
 #'                                         1 \tab     \tab , if the provided value of \code{EOM} deviates from the value that               \cr
@@ -437,7 +436,7 @@
 #'                                           \tab     \tab                                                                                  \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{EOMOverride}} =  \tab     \tab                                                                               \cr
 #'                                       1 \tab     \tab , if the provided value of \code{EOM} is overridden by a value that           \cr
@@ -461,7 +460,7 @@
 #'                       ================= \tab === \tab ===========================================                                   \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{DCCOverride}} =  \tab     \tab                                                             \cr
 #'                                       1 \tab     \tab if \code{DCC} is missing or NA or not element of c(1:16).   \cr
@@ -477,7 +476,7 @@
 #'                       ================= \tab === \tab ===========================================                 \cr
 #'          }
 #'        }
-#'        \item{}{
+#'        \item{-}{
 #'          \tabular{rcl}{
 #'            \bold{\emph{NoCoups}} =  \tab     \tab                                                                      \cr
 #'                                   1 \tab     \tab , if there are no coupon payments between the provided               \cr

@@ -4,14 +4,27 @@
 \alias{BondVal.Price}
 \title{BondVal.Price (calculation of CP, AccrInt, DP, ModDUR, MacDUR and Conv)}
 \usage{
-BondVal.Price(YtM = as.numeric(NA), SETT = as.Date(NA),
-  Em = as.Date(NA), Mat = as.Date(NA), CpY = as.numeric(NA),
-  FIPD = as.Date(NA), LIPD = as.Date(NA), FIAD = as.Date(NA),
-  RV = as.numeric(NA), Coup = as.numeric(NA), DCC = as.numeric(NA),
-  EOM = as.numeric(NA), DateOrigin = as.Date("1970-01-01"),
-  InputCheck = 1, FindEOM = FALSE, RegCF.equal = 0,
-  SimpleLastPeriod = TRUE, Calc.Method = 1,
-  AnnivDatesOutput = as.list(NA))
+BondVal.Price(
+  YtM = as.numeric(NA),
+  SETT = as.Date(NA),
+  Em = as.Date(NA),
+  Mat = as.Date(NA),
+  CpY = as.numeric(NA),
+  FIPD = as.Date(NA),
+  LIPD = as.Date(NA),
+  FIAD = as.Date(NA),
+  RV = as.numeric(NA),
+  Coup = as.numeric(NA),
+  DCC = as.numeric(NA),
+  EOM = as.numeric(NA),
+  DateOrigin = as.Date("1970-01-01"),
+  InputCheck = 1,
+  FindEOM = FALSE,
+  RegCF.equal = 0,
+  SimpleLastPeriod = TRUE,
+  Calc.Method = 1,
+  AnnivDatesOutput = as.list(NA)
+)
 }
 \arguments{
 \item{YtM}{The bond's yield to maturity p.a. on \code{SETT}. (required)}

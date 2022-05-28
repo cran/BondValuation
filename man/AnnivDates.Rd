@@ -4,11 +4,22 @@
 \alias{AnnivDates}
 \title{AnnivDates (time-invariant properties and temporal structure)}
 \usage{
-AnnivDates(Em = as.Date(NA), Mat = as.Date(NA), CpY = as.numeric(NA),
-  FIPD = as.Date(NA), LIPD = as.Date(NA), FIAD = as.Date(NA),
-  RV = as.numeric(NA), Coup = as.numeric(NA), DCC = as.numeric(NA),
-  EOM = as.numeric(NA), DateOrigin = as.Date("1970-01-01"),
-  InputCheck = 1, FindEOM = FALSE, RegCF.equal = 0)
+AnnivDates(
+  Em = as.Date(NA),
+  Mat = as.Date(NA),
+  CpY = as.numeric(NA),
+  FIPD = as.Date(NA),
+  LIPD = as.Date(NA),
+  FIAD = as.Date(NA),
+  RV = as.numeric(NA),
+  Coup = as.numeric(NA),
+  DCC = as.numeric(NA),
+  EOM = as.numeric(NA),
+  DateOrigin = as.Date("1970-01-01"),
+  InputCheck = 1,
+  FindEOM = FALSE,
+  RegCF.equal = 0
+)
 }
 \arguments{
 \item{Em}{The bond's issue date. (required)}
@@ -51,7 +62,7 @@ All dates are returned irrespective of whether they are on a business day or not
  \describe{
    \item{\emph{\bold{DateVectors}} (data frame)}{
      \describe{
-       \item{}{}
+       \item{-}{}
        \item{\emph{RealDates}}{A vector of Date class objects with format "\%Y-\%m-\%d" in ascending order,
        that contains the issue date, all actual coupon payment dates and the maturity date.}
        \item{\emph{RD_indexes}}{A vector of numerics capturing the temporal structure of the bond.}
@@ -65,12 +76,12 @@ All dates are returned irrespective of whether they are on a business day or not
        date immediately succeeding the maturity date, if the bond has an irregular final coupon period;
        otherwise it is the maturity date.}
        \item{\emph{AD_indexes}}{A vector of numerics capturing the temporal structure of the bond.}
-       \item{}{}
+       \item{-}{}
      }
    }
    \item{\emph{\bold{PaySched}} (data frame)}{
      \describe{
-       \item{}{}
+       \item{-}{}
        \item{\emph{CoupDates}}{A vector of Date class objects with format "\%Y-\%m-\%d" in ascending order,
        that contains all actual coupon payment dates and the maturity date.}
        \item{\emph{CoupPayments}}{A vector of class "numeric" objects, that contains the actual amounts of
@@ -78,12 +89,12 @@ All dates are returned irrespective of whether they are on a business day or not
        same as that of \code{RV} that was passed to the function. \code{RV} is not included in the final
        interest payment.}
        \item{\bold{NOTE:}}{\code{PaySched} is created only if the variable \code{Coup} is provided.}
-       \item{}{}
+       \item{-}{}
      }
    }
    \item{\emph{\bold{Traits}} (data frame)}{
      \describe{
-       \item{}{}
+       \item{-}{}
        \item{\emph{DateOrigin}}{The starting point for the daycount in "Date" objects.}
        \item{\emph{CpY}}{Number of interest payments per year.}
        \item{\emph{FIAD}}{Date on which the interest accrual starts (so-called "dated date").}
@@ -115,15 +126,14 @@ All dates are returned irrespective of whether they are on a business day or not
        \item{\emph{EOM_Orig}}{The value of \code{EOM} that was entered.}
        \item{\emph{est_EOM}}{The estimated value of \code{EOM}.}
        \item{\emph{EOM_used}}{The value of \code{EOM} that was used in the calculations.}
-       \item{}{}
+       \item{-}{}
      }
    }
    \item{\emph{\bold{Warnings}} (data frame)}{
      \describe{
-       \item{}{}
-       \item{}{A set of flags that indicate the occurrence of warnings during the execution.
+       \item{-}{A set of flags that indicate the occurrence of warnings during the execution.
                Below they are listed according to the hierarchical structure within the function \bold{AnnivDates}.}
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
                                            \tab     \tab                                                                         \cr
                                            \tab     \tab                                                                         \cr
@@ -139,7 +149,7 @@ All dates are returned irrespective of whether they are on a business day or not
                          ================= \tab === \tab ===========================================                             \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{EmMatMissing}} =  \tab     \tab                                                                                        \cr
                                        1 \tab     \tab , if either issue date (\code{Em}) or maturity date (\code{Mat}) or both               \cr
@@ -152,7 +162,7 @@ All dates are returned irrespective of whether they are on a business day or not
                        ================= \tab === \tab ===========================================                                            \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{CpYOverride}} =  \tab     \tab                                                                                \cr
                                       1 \tab     \tab , if number of interest periods per year (\code{CpY}) is missing or            \cr
@@ -166,7 +176,7 @@ All dates are returned irrespective of whether they are on a business day or not
                       ================= \tab === \tab ===========================================                                    \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{RV_set100percent}} =  \tab     \tab                                                                 \cr
                                            1 \tab     \tab , if the redemption value (\code{RV}) is missing or \code{NA}.  \cr
@@ -179,7 +189,7 @@ All dates are returned irrespective of whether they are on a business day or not
                            ================= \tab === \tab ===========================================                     \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{NegLifeFlag}} =  \tab     \tab                                                                                        \cr
                                       1 \tab     \tab , if the provided maturity date (\code{Mat}) is before or on the                       \cr
@@ -192,7 +202,7 @@ All dates are returned irrespective of whether they are on a business day or not
                       ================= \tab === \tab ===========================================                                            \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{ZeroFlag}} =  \tab     \tab                                                                                              \cr
                                    1 \tab     \tab , if number of interest payments per year (\code{CpY}) is \code{0}.                          \cr
@@ -204,7 +214,7 @@ All dates are returned irrespective of whether they are on a business day or not
                    ================= \tab === \tab ===========================================                                                  \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{Em_Mat_SameMY}} =  \tab     \tab                                                                                   \cr
                                         1 \tab     \tab , if the issue date (\code{Em}) and the maturity date (\code{Mat}) are in the     \cr
@@ -218,7 +228,7 @@ All dates are returned irrespective of whether they are on a business day or not
                         ================= \tab === \tab ===========================================                                       \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{ChronErrorFlag}} =  \tab     \tab                                                                                     \cr
                                          1 \tab     \tab , if the provided dates are in a wrong chronological order.                         \cr
@@ -235,7 +245,7 @@ All dates are returned irrespective of whether they are on a business day or not
                          ================= \tab === \tab ===========================================                                         \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{FIPD_LIPD_equal}} =  \tab     \tab                                                                                           \cr
                                           1 \tab     \tab if \code{Em} < \code{FIPD} = \code{LIPD} < \code{Mat}.                                    \cr
@@ -248,7 +258,7 @@ All dates are returned irrespective of whether they are on a business day or not
                           ================= \tab === \tab ===========================================                                               \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{IPD_CpY_Corrupt}} =  \tab     \tab                                                                       \cr
                                           1 \tab     \tab , if the provided first interest payment date (\code{FIPD}) and last  \cr
@@ -280,7 +290,7 @@ All dates are returned irrespective of whether they are on a business day or not
                           ================= \tab === \tab ===========================================                           \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{EOM_Deviation}} =  \tab     \tab                                                                                  \cr
                                         1 \tab     \tab , if the provided value of \code{EOM} deviates from the value that               \cr
@@ -299,7 +309,7 @@ All dates are returned irrespective of whether they are on a business day or not
                                           \tab     \tab                                                                                  \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{EOMOverride}} =  \tab     \tab                                                                               \cr
                                       1 \tab     \tab , if the provided value of \code{EOM} is overridden by a value that           \cr
@@ -323,7 +333,7 @@ All dates are returned irrespective of whether they are on a business day or not
                       ================= \tab === \tab ===========================================                                   \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{DCCOverride}} =  \tab     \tab                                                             \cr
                                       1 \tab     \tab if \code{DCC} is missing or NA or not element of c(1:16).   \cr
@@ -339,7 +349,7 @@ All dates are returned irrespective of whether they are on a business day or not
                       ================= \tab === \tab ===========================================                 \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{rcl}{
            \bold{\emph{NoCoups}} =  \tab     \tab                                                                      \cr
                                   1 \tab     \tab , if there are no coupon payments between the provided               \cr
@@ -394,18 +404,18 @@ estimate the points in time needed to evaluate a bond.
   \code{CpY}, \code{RV} and \code{Coup} can be provided either as class "numeric" or as a number of
   class "character".
 
-\item The provided issue date (\code{Em}) is instantly substituted by the first interest accrual
+  \item The provided issue date (\code{Em}) is instantly substituted by the first interest accrual
   date (\code{FIAD}) if \code{FIAD} is available and different from \code{Em}.
 
-\item Before the determination of the bond's date characteristics begins, the code evaluates
+  \item Before the determination of the bond's date characteristics begins, the code evaluates
   the provided calendar dates for plausibility. In this process implausible dates are dropped.
   The sort of corresponding implausibility is identified and stored in a warning flag. (See
   section \bold{Value} for details.)
 
-\item The remaining valid calendar dates are used to gauge whether the bond follows the
+  \item The remaining valid calendar dates are used to gauge whether the bond follows the
   End-of-Month-Rule. The resulting parameter est_EOM can take on the following values:
      \describe{
-       \item{}{
+       \item{-}{
          \tabular{cl}{
          \bold{\emph{Case 1:}} \tab \bold{\code{FIPD} and \code{LIPD} are both \code{NA}} \cr
                    ___________ \tab ____________________________________                  \cr
@@ -414,7 +424,7 @@ estimate the points in time needed to evaluate a bond.
                     ========== \tab ================================                      \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{cl}{
          \bold{\emph{Case 2:}} \tab \bold{\code{FIPD} is \code{NA} and \code{LIPD} is a valid calendar date} \cr
                    ___________ \tab ____________________________________                                     \cr
@@ -423,7 +433,7 @@ estimate the points in time needed to evaluate a bond.
                     ========== \tab ================================                                         \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{cl}{
          \bold{\emph{Case 3:}} \tab \bold{\code{FIPD} is a valid calendar date and \code{LIPD} is \code{NA}} \cr
                    ___________ \tab ____________________________________                                     \cr
@@ -432,7 +442,7 @@ estimate the points in time needed to evaluate a bond.
                     ========== \tab ================================                                         \cr
          }
        }
-       \item{}{
+       \item{-}{
          \tabular{cl}{
          \bold{\emph{Case 4:}} \tab \bold{\code{FIPD} and \code{LIPD} are valid calendar dates} \cr
                    ___________ \tab ____________________________________                        \cr
@@ -461,7 +471,7 @@ estimate the points in time needed to evaluate a bond.
               ======= \tab ====================================                            \cr
               }
 
-\item If \code{FIPD} and \code{LIPD} are both available, the lengths of the first and final coupon
+  \item If \code{FIPD} and \code{LIPD} are both available, the lengths of the first and final coupon
   periods are determinate and can be "regular", "long" or "short". To find the interest payment dates
   between \code{FIPD} and \code{LIPD} the following assumptions are met:
   \enumerate{
@@ -483,7 +493,7 @@ estimate the points in time needed to evaluate a bond.
   In each of the three cases, \code{FIPD} and \code{LIPD} are dropped
   with the flag \code{IPD_CpY_Corrupt = 1}.
 
-\item If neither \code{FIPD} nor \code{LIPD} are available the code
+  \item If neither \code{FIPD} nor \code{LIPD} are available the code
   evaluates the bond based only upon the required variables \code{Em} and
   \code{Mat} (and \code{CpY}, which is \code{2} by default). Since FIPD is
   not given, it is impossible to distinguish between a "short" and "long" odd
@@ -499,7 +509,7 @@ estimate the points in time needed to evaluate a bond.
   all interest payment dates.}
   }
 
-\item If \code{LIPD} is available but \code{FIPD} is not, the length
+  \item If \code{LIPD} is available but \code{FIPD} is not, the length
   of the final coupon payment period is determined by \code{LIPD} and
   \code{Mat} and can be "regular", "long" or "short". The locations of
   the interest payment dates are estimated under the following assumptions:
@@ -511,7 +521,7 @@ estimate the points in time needed to evaluate a bond.
   all interest payment dates.}
   }
 
-\item If \code{FIPD} is available but \code{LIPD} is not, the length
+  \item If \code{FIPD} is available but \code{LIPD} is not, the length
   of the first coupon payment period is determined by \code{Em} and
   \code{FIPD} and can be "regular", "long" or "short". The locations of
   the interest payment dates are estimated under the following assumptions:

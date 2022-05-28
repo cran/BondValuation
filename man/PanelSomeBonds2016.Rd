@@ -4,7 +4,8 @@
 \name{PanelSomeBonds2016}
 \alias{PanelSomeBonds2016}
 \title{A panel of of 100 plain vanilla fixed coupon corporate bonds.}
-\format{A data frame with 12718 rows and 16 variables:
+\format{
+A data frame with 12718 rows and 16 variables:
 \describe{
   \item{ID.No}{Identification number of the security.}
   \item{Coup.Type}{Type of the bond's coupon.}
@@ -31,7 +32,8 @@
   \item{SETT}{The settlement date that corresponds to \code{TradeDate}.}
   \item{CP.Input}{The clean price of the bond on \code{TradeDate}.}
   \item{YtM.Input}{The annualized yield to maturity of the bond on \code{TradeDate}.}
-}}
+}
+}
 \usage{
 data(PanelSomeBonds2016)
 }

@@ -311,38 +311,38 @@ BondVal.Yield<-function(CP=as.numeric(NA),SETT=as.Date(NA),Em=as.Date(NA),Mat=as
           } else {
             yApprox<-Coup/CP+(RV/CP)^(1/(w+eta+z))-1
             aApprox<-1+yApprox/CpY
-            if ((Use.ClosedForm==1)&(!(1+0.015>aApprox))) {
-              CF<-CF.values[2]
-              #
-              # creating the price equation
-              #
-              PriceEqn<-gsub(" ","",paste("-",DP,"+b*",DP,"+",CN_tau,"*b^",w,"-",CN_tau,"*b^(",w,"+1)+",CF,"*b^(",w,"+1)-",CF,"*b^(",w,"+",eta,"+1)+",CF_final,"*b^(",w,"+",eta,"+",z,")-",CF_final,"*b^(",w,"+",eta,"+",z,"+1)"))
-              PriceFunction<-function(b) {
-                out<-eval(parse(text=PriceEqn))
-                return(out)
-              }
-              #
-              # creating the first derivative of the price function
-              #
-              d_PriceEqn<-gsub(" ","",paste(DP,"+",w,"*",CN_tau,"*b^(",w,"-1)+(",w,"+1)*(",CF,"-",CN_tau,")*b^",w,"-(",w,"+",eta,"+1)*",CF,"*b^(",w,"+",eta,")+(",w,"+",eta,"+",z,")*",CF_final,"*b^(",w,"+",eta,"+",z,"-1)-(",w,"+",eta,"+",z,"+1)*",CF_final,"*b^(",w,"+",eta,"+",z,")"))
-              d_PriceFunction<-function(b) {
-                out<-eval(parse(text=d_PriceEqn))
-                return(out)
-              }
-              bApprox<-1/aApprox
-              NewtRaph.Out<-NewtonRaphson(PriceFunction,d_PriceFunction,bApprox,Precision)
-              b<-as.numeric(NewtRaph.Out[1])
-              a<-1/b
-              ytm.p.a.<-CpY*(a-1)*100
-              ModDUR.inYears<-ModDUR(a,c(1,CN_tau,CF,CF_final,w,eta,z,CpY,DP))
-              # ModDUR.inYears<-(-1)*(1/DP)*dm_MyPriceEqn(a,c(1,CN_tau,CF,CF_final,w,eta,z,CpY))
-              MacDUR.inYears<-ModDUR.inYears*a
-              Conv.inYears<-CONV(a,c(2,CN_tau,CF,CF_final,w,eta,z,CpY,DP))
-              # Conv.inYears<-0.5*(1/DP)*dm_MyPriceEqn(a,c(2,CN_tau,CF,CF_final,w,eta,z,CpY))
-              ModDUR.inPeriods<-ModDUR.inYears*CpY
-              MacDUR.inPeriods<-MacDUR.inYears*CpY
-              Conv.inPeriods<-Conv.inYears*(CpY^2)
-            } else {
+            # if ((Use.ClosedForm==1)&(!(1+0.015>aApprox))) {
+            #   CF<-CF.values[2]
+            #   #
+            #   # creating the price equation
+            #   #
+            #   PriceEqn<-gsub(" ","",paste("-",DP,"+b*",DP,"+",CN_tau,"*b^",w,"-",CN_tau,"*b^(",w,"+1)+",CF,"*b^(",w,"+1)-",CF,"*b^(",w,"+",eta,"+1)+",CF_final,"*b^(",w,"+",eta,"+",z,")-",CF_final,"*b^(",w,"+",eta,"+",z,"+1)"))
+            #   PriceFunction<-function(b) {
+            #     out<-eval(parse(text=PriceEqn))
+            #     return(out)
+            #   }
+            #   #
+            #   # creating the first derivative of the price function
+            #   #
+            #   d_PriceEqn<-gsub(" ","",paste(DP,"+",w,"*",CN_tau,"*b^(",w,"-1)+(",w,"+1)*(",CF,"-",CN_tau,")*b^",w,"-(",w,"+",eta,"+1)*",CF,"*b^(",w,"+",eta,")+(",w,"+",eta,"+",z,")*",CF_final,"*b^(",w,"+",eta,"+",z,"-1)-(",w,"+",eta,"+",z,"+1)*",CF_final,"*b^(",w,"+",eta,"+",z,")"))
+            #   d_PriceFunction<-function(b) {
+            #     out<-eval(parse(text=d_PriceEqn))
+            #     return(out)
+            #   }
+            #   bApprox<-1/aApprox
+            #   NewtRaph.Out<-NewtonRaphson(PriceFunction,d_PriceFunction,bApprox,Precision)
+            #   b<-as.numeric(NewtRaph.Out[1])
+            #   a<-1/b
+            #   ytm.p.a.<-CpY*(a-1)*100
+            #   ModDUR.inYears<-ModDUR(a,c(1,CN_tau,CF,CF_final,w,eta,z,CpY,DP))
+            #   # ModDUR.inYears<-(-1)*(1/DP)*dm_MyPriceEqn(a,c(1,CN_tau,CF,CF_final,w,eta,z,CpY))
+            #   MacDUR.inYears<-ModDUR.inYears*a
+            #   Conv.inYears<-CONV(a,c(2,CN_tau,CF,CF_final,w,eta,z,CpY,DP))
+            #   # Conv.inYears<-0.5*(1/DP)*dm_MyPriceEqn(a,c(2,CN_tau,CF,CF_final,w,eta,z,CpY))
+            #   ModDUR.inPeriods<-ModDUR.inYears*CpY
+            #   MacDUR.inPeriods<-MacDUR.inYears*CpY
+            #   Conv.inPeriods<-Conv.inYears*(CpY^2)
+            # } else {
               if (z>0) {
                 DiscPowerVector<-c((seq(0,eta,by=1)+w),(w+eta+z))
               } else {
@@ -392,7 +392,7 @@ BondVal.Yield<-function(CP=as.numeric(NA),SETT=as.Date(NA),Em=as.Date(NA),Mat=as
               }
               Conv.inPeriods<-(1/DP)*0.5*d2_PriceFunction.Standard(a)
               Conv.inYears<-Conv.inPeriods/(CpY^2)
-            }
+            # }
           }
           N.Iter<-NewtRaph.Out[2]
           f.value<-NewtRaph.Out[3]

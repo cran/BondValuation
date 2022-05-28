@@ -4,12 +4,14 @@
 \name{List.DCC}
 \alias{List.DCC}
 \title{List of the day count conventions implemented.}
-\format{A data frame with 16 rows and 3 variables:
+\format{
+A data frame with 16 rows and 3 variables:
 \describe{
   \item{DCC}{Identifier.}
   \item{DCC.Name}{Names of the day count convention.}
   \item{DCC.Reference}{Reference.}
-}}
+}
+}
 \usage{
 data(List.DCC)
 }
